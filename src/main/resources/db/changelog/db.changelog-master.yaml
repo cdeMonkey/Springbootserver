@@ -18,19 +18,3 @@ databaseChangeLog:
                   type: varchar(255)
                   constraints:
                     nullable: false
-
-         - createTable:
-            tableName: account
-            columns:
-                      - column:
-                          name: id
-                          type: int
-                          autoIncrement: true
-                          constraints:
-                            primaryKey: true
-                            nullable: false
-                      - column:
-                          name: email
-                          type: varchar(255)
-                          constraints:
-                            nullable: false
