@@ -20,18 +20,16 @@ public class Account {
     private long id;
 
     @NotEmpty
-    private String isbn;
+    private String email;
 
     public Long getId() {
         return id;
     }
 
-    public String getIsbn() {
-        return isbn;
-    }
+    public String getEmail() {return email; }
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 }

@@ -13,30 +13,30 @@ import java.util.List;
 public class AccountController {
 
 
-    private BookRepository repository;
+    private AccountRepository repository;
 
     @Autowired
-    public AccountController(BookRepository repository) {
+    public AccountController(AccountRepository repository) {
         this.repository = repository;
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Book> get(@PathVariable("id") Long id) {
-        Book book = repository.findOne(id);
-        if (null == book) {
-            return new ResponseEntity<Book>(HttpStatus.NOT_FOUND);
+    public ResponseEntity<Account> get(@PathVariable("id") Long id) {
+        Account account = repository.findOne(id);
+        if (null == account) {
+            return new ResponseEntity<Account>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<Book>(book, HttpStatus.OK);
+        return new ResponseEntity<Account>(account, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/new", method = RequestMethod.POST)
-    public ResponseEntity<Book> update(@RequestBody Book book) {
-        repository.save(book);
-        return get(book.getId());
+    public ResponseEntity<Account> update(@RequestBody Account account) {
+        repository.save(account);
+        return get(account.getId());
     }
 
     @RequestMapping
-    public List<Book> all() {
+    public List<Account> all() {
         return repository.findAll();
     }
 }
