@@ -14,7 +14,7 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: email
+                  name: isbn
                   type: varchar(255)
                   constraints:
                     nullable: false
