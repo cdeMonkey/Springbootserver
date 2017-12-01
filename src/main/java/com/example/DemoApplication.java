@@ -12,7 +12,7 @@ public class DemoApplication {
   @RequestMapping("/")
   @ResponseBody
   String home() {
-    return "Hello! ";
+    return "TreasureHunt SpringBoot serverApp ";
   }
 
   @RequestMapping("/hello")
