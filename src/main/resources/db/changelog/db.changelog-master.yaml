@@ -33,4 +33,36 @@ databaseChangeLog:
                            type: varchar(255)
                            constraints:
                              nullable: false
+        - insertTable:
+                                       tableName: cells
+                                       columns:
+                                         - column:
+                                             name: id
+                                             type: int
+                                             autoIncrement: true
+                                             constraints:
+                                               primaryKey: true
+                                               nullable: false
+                                         - column:
+                                             name: numlayers
+                                             type: int
+                                             constraints:
+                                               nullable: false
+                                         - column:
+                                             name: treasurelayer
+                                             type: int
+                                             autoIncrement: true
+                                              constraints:
+                                                nullable: false
+                                         - column:
+                                             name: hintlayer
+                                             type: int
+                                             constraints:
+                                               nullable: false
+                                         - column:
+                                             name: hinttext
+                                             type: varchar(255)
+                                             constraints:
+                                               nullable: true
+
 
