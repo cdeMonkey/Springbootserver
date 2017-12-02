@@ -63,5 +63,28 @@ databaseChangeLog:
                             type: varchar(255)
                             constraints:
                               nullable: true
+        - insertTable:
+                     tableName: usermapcells
+                     columns:
+                       - column:
+                            name: userid
+                            type: int
+                            constraints:
+                              foreignKeyName: user
+                              references: account(id)
+                              nullable: false
+                       - column:
+                            name: cellid
+                            type: int
+                            constraints:
+                              nullable: false
+                              foreignKeyName: cell
+                              references: cells(id)
+                       - column:
+                            name: currentlayerid
+                            type: int
+                            constraints:
+                              nullable: false
+
 
 
