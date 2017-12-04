@@ -21,6 +21,7 @@ public class AccountController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+
     public ResponseEntity<Account> get(@PathVariable("id") Long id) {
         Account account = repository.findOne(id);
         if (null == account) {
