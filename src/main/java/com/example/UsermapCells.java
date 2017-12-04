@@ -16,25 +16,33 @@ import javax.persistence.Id;
  */
 
 
+
 @Entity
 public class UsermapCells {
 
 
+    @Id
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
 
     @NotEmpty
 
-    private int userid;
+//    private int userid;
+
     private int currentlayerid;
     private int cellid;
 
-    public int getUserid() { return userid; }
+//    public int getUserid() { return userid; }
+    public long getId(){return  id;}
     public int getCurrentlayerid() { return currentlayerid; }
     public int getCellid() { return cellid; }
+//
+//    public void setUserid(int userid) {
+//        this.userid = userid;
+//    }
 
-    public void setUserid(int userid) {
-        this.userid = userid;
-    }
     public void setCurrentlayerid(int currentlayerid) {
         this.currentlayerid = currentlayerid;
     }

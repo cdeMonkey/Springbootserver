@@ -27,8 +27,8 @@ public class UsermapcellsController {
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
 
-    public ResponseEntity<UsermapCells> get(@PathVariable("id") long userid) {
-        UsermapCells usermapCells = repository.findOne(userid);
+    public ResponseEntity<UsermapCells> get(@PathVariable("id") long id) {
+        UsermapCells usermapCells = repository.findOne(id);
         if (null == usermapCells) {
             return new ResponseEntity<UsermapCells>(HttpStatus.NOT_FOUND);
         }
@@ -38,7 +38,7 @@ public class UsermapcellsController {
     @RequestMapping(value = "/new", method = RequestMethod.POST)
     public ResponseEntity<UsermapCells> update(@RequestBody UsermapCells usermapCells) {
         repository.save(usermapCells);
-        return get(usermapCells.getUserid());
+        return get(usermapCells.getId());
     }
 
     @RequestMapping
